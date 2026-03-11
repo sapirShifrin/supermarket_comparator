@@ -13,6 +13,8 @@ node_modules/
 **/.env.*
 !.env.example
 !**/.env.example
+client/.env
+.env
 
 ####################################
 # Builds / outputs
