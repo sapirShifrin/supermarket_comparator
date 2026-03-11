@@ -16,6 +16,7 @@ app.use(
   })
 );
 app.use(express.json());
+app.get("/api/health", (req, res) => res.json({ ok: true }));
 // הגשה סטטית של התמונות: http://localhost:5000/uploads/<filename>
 app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')));
 
