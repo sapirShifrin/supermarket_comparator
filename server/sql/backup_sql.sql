@@ -40,7 +40,7 @@ CREATE TABLE `carts` (
 
 LOCK TABLES `carts` WRITE;
 /*!40000 ALTER TABLE `carts` DISABLE KEYS */;
-INSERT INTO `carts` VALUES (2,2,2,'2026-03-08 12:01:16'),(2,23,3,'2026-03-08 12:01:48');
+INSERT INTO `carts` VALUES (2,1,3,'2026-03-10 12:23:21'),(2,2,2,'2026-03-10 12:23:25'),(2,3,1,'2026-03-10 12:23:28'),(2,5,1,'2026-03-10 12:23:31'),(2,41,1,'2026-03-10 12:24:19'),(2,42,1,'2026-03-10 12:24:21'),(2,43,1,'2026-03-10 12:24:22'),(2,44,1,'2026-03-10 12:24:23'),(2,45,1,'2026-03-10 12:24:25'),(2,81,3,'2026-03-10 12:24:33'),(2,82,1,'2026-03-10 12:24:34'),(2,83,2,'2026-03-10 12:24:36'),(2,84,2,'2026-03-10 12:24:40'),(8,1,3,'2026-03-10 12:31:06'),(8,2,2,'2026-03-10 12:31:07'),(8,3,2,'2026-03-10 12:31:09');
 /*!40000 ALTER TABLE `carts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -66,7 +66,7 @@ CREATE TABLE `comments` (
   CONSTRAINT `fk_comments_product` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_comments_supermarket` FOREIGN KEY (`supermarket_id`) REFERENCES `supermarkets` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_comments_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -75,7 +75,7 @@ CREATE TABLE `comments` (
 
 LOCK TABLES `comments` WRITE;
 /*!40000 ALTER TABLE `comments` DISABLE KEYS */;
-INSERT INTO `comments` VALUES (1,2,23,4,'הגיע מקולקל',NULL,'2026-03-08 12:02:21');
+INSERT INTO `comments` VALUES (1,2,1,1,'החלב הגיע לי מקולקל','1773138623505-278469876.jpg','2026-03-10 12:30:23'),(2,8,1,1,'החלב הגיע מעוך לגמרי ונשפך הרוב',NULL,'2026-03-10 12:31:52');
 /*!40000 ALTER TABLE `comments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -126,7 +126,7 @@ CREATE TABLE `supermarketproducts` (
   KEY `fk_sp_product` (`product_id`),
   CONSTRAINT `fk_sp_product` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_sp_supermarket` FOREIGN KEY (`supermarket_id`) REFERENCES `supermarkets` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -135,7 +135,7 @@ CREATE TABLE `supermarketproducts` (
 
 LOCK TABLES `supermarketproducts` WRITE;
 /*!40000 ALTER TABLE `supermarketproducts` DISABLE KEYS */;
-INSERT INTO `supermarketproducts` VALUES (10,4,2,3.90,'available','2026-03-08 11:59:52'),(11,4,23,4.20,'available','2026-03-08 12:00:24');
+INSERT INTO `supermarketproducts` VALUES (1,1,1,5.90,'available','2026-03-10 11:55:00'),(2,1,2,7.00,'available','2026-03-10 11:55:11'),(3,1,3,9.00,'available','2026-03-10 11:55:17'),(4,1,41,35.00,'available','2026-03-10 11:55:37'),(5,1,42,50.00,'available','2026-03-10 11:55:42'),(6,1,43,30.00,'out_of_stock','2026-03-10 11:55:55'),(7,1,44,25.00,'out_of_stock','2026-03-10 11:56:07'),(8,1,81,7.00,'available','2026-03-10 11:57:18'),(9,1,82,10.00,'available','2026-03-10 11:57:26'),(10,1,83,10.00,'available','2026-03-10 11:57:35'),(11,2,1,3.00,'available','2026-03-10 12:03:42'),(12,2,2,8.00,'available','2026-03-10 12:03:49'),(13,2,3,10.00,'available','2026-03-10 12:03:53'),(14,2,4,5.00,'out_of_stock','2026-03-10 12:03:58'),(15,2,5,7.00,'available','2026-03-10 12:04:04'),(16,2,6,8.00,'out_of_stock','2026-03-10 12:04:13'),(17,2,7,6.00,'available','2026-03-10 12:04:19'),(18,2,41,30.00,'available','2026-03-10 12:04:36'),(19,2,42,55.00,'available','2026-03-10 12:05:06'),(20,2,43,34.00,'available','2026-03-10 12:05:12'),(21,2,44,26.00,'available','2026-03-10 12:05:20'),(22,2,45,60.00,'available','2026-03-10 12:05:34'),(23,2,81,6.00,'available','2026-03-10 12:05:49'),(24,2,82,9.00,'out_of_stock','2026-03-10 12:05:54'),(25,2,83,11.00,'available','2026-03-10 12:06:01'),(26,2,84,11.00,'out_of_stock','2026-03-10 12:06:09'),(27,3,1,7.00,'available','2026-03-10 12:07:13'),(28,3,2,8.00,'available','2026-03-10 12:07:16'),(29,3,3,9.00,'available','2026-03-10 12:07:20'),(30,3,4,9.00,'available','2026-03-10 12:07:27'),(31,3,5,6.00,'available','2026-03-10 12:07:32'),(32,3,6,6.00,'available','2026-03-10 12:07:37'),(33,3,7,7.00,'out_of_stock','2026-03-10 12:07:44'),(34,3,8,7.00,'available','2026-03-10 12:07:51'),(35,3,41,25.00,'available','2026-03-10 12:08:19'),(36,3,42,50.00,'out_of_stock','2026-03-10 12:08:27'),(37,3,43,30.00,'available','2026-03-10 12:08:32'),(38,3,44,20.00,'available','2026-03-10 12:08:38'),(39,3,46,52.00,'available','2026-03-10 12:08:47'),(40,3,81,8.00,'available','2026-03-10 12:09:00'),(41,3,82,10.00,'available','2026-03-10 12:09:06'),(42,3,83,10.00,'available','2026-03-10 12:09:11'),(43,3,84,10.00,'available','2026-03-10 12:09:15'),(44,4,1,5.00,'available','2026-03-10 12:09:57'),(45,4,2,7.00,'available','2026-03-10 12:10:02'),(46,4,3,9.00,'out_of_stock','2026-03-10 12:10:08'),(47,4,5,5.00,'available','2026-03-10 12:10:14'),(48,4,6,6.00,'available','2026-03-10 12:10:18'),(49,4,41,40.00,'available','2026-03-10 12:10:27'),(50,4,42,50.00,'available','2026-03-10 12:10:35'),(51,4,43,35.00,'available','2026-03-10 12:10:44'),(52,4,44,30.00,'available','2026-03-10 12:10:50'),(53,4,45,56.00,'available','2026-03-10 12:10:56'),(54,4,81,7.00,'available','2026-03-10 12:11:05'),(55,4,82,9.00,'available','2026-03-10 12:11:09'),(56,4,83,7.00,'available','2026-03-10 12:11:14'),(57,4,84,8.00,'available','2026-03-10 12:11:19'),(58,4,85,10.00,'available','2026-03-10 12:11:24'),(59,4,86,13.00,'available','2026-03-10 12:11:29');
 /*!40000 ALTER TABLE `supermarketproducts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -164,7 +164,7 @@ CREATE TABLE `supermarkets` (
 
 LOCK TABLES `supermarkets` WRITE;
 /*!40000 ALTER TABLE `supermarkets` DISABLE KEYS */;
-INSERT INTO `supermarkets` VALUES (1,'שופרסל - סניף מרכז','תל אביב',NULL,'2026-03-08 11:40:07'),(2,'רמי לוי - סניף העיר','ירושלים',NULL,'2026-03-08 11:40:07'),(3,'ויקטורי - סניף דרום','באר שבע',NULL,'2026-03-08 11:40:07'),(4,'אבי ובניו','',1,'2026-03-08 11:57:34');
+INSERT INTO `supermarkets` VALUES (1,'רמי לוי','באר שבע',3,'2026-03-10 11:47:57'),(2,'שופרסל','באר שבע דרך חברון',4,'2026-03-10 12:03:29'),(3,'מחסני השוק','באר שבע אשל הנשיא',5,'2026-03-10 12:07:00'),(4,'אושר עד','עמק שרה באר שבע',6,'2026-03-10 12:09:46');
 /*!40000 ALTER TABLE `supermarkets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -187,7 +187,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `uq_users_email` (`email`),
   KEY `fk_users_supermarket` (`supermarket_id`),
   CONSTRAINT `fk_users_supermarket` FOREIGN KEY (`supermarket_id`) REFERENCES `supermarkets` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -196,7 +196,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'אבי כהן','avi@gmail.com','$2b$10$XtJp8BECqnB1Sgy1832S5eXrazXdNtBXoMfph.mw6axDyi.B6ltKS','manager',4,'2026-03-08 11:57:34'),(2,'לקוח','client@gmail.com','$2b$10$092sbgc7cy2lzPFHFJXvr.GISFDzWTbOiePXQeTQ6DZ91ytvhdtLi','client',NULL,'2026-03-08 12:01:07');
+INSERT INTO `users` VALUES (2,'לקוח','client@gmail.com','$2b$10$092sbgc7cy2lzPFHFJXvr.GISFDzWTbOiePXQeTQ6DZ91ytvhdtLi','client',NULL,'2026-03-08 12:01:07'),(3,'רמי לוי','rami_levy@gmail.com','$2b$10$UNRW2Pcg9d3TflqknLxbielqrqBM8DcV5RHrCv3tBE532bzeNGQrm','manager',1,'2026-03-10 11:47:57'),(4,'שופרסל','shufersal@gmail.com','$2b$10$1dr31m6epc7Hgm9epblUju6a33utktyY6u43yWKyD/UBNwjONA/oG','manager',2,'2026-03-10 12:03:29'),(5,'מחסני השוק','mahsaneyHashuk@gmail.com','$2b$10$HQSDBynoh6kBQ1bdA6a6JugGLKDQZ0jD2bF8uJ1uO5ITZrKYgYDIW','manager',3,'2026-03-10 12:07:00'),(6,'אושר עד','osherAd@gmail.com','$2b$10$H1cwZM7xrncuUy5u826z3uXo9AJSNsGrDE3GO.kCyz6LtpVmAhhe6','manager',4,'2026-03-10 12:09:46'),(8,'אבי','client2@gmail.com','$2b$10$71cZWmaReC6TTJyCpQBHFeAMpiGh4Rt8aPdqlRnvr0kkmoeNX6t/.','client',NULL,'2026-03-10 12:31:00');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -209,4 +209,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-03-08 12:22:51
+-- Dump completed on 2026-03-12 11:31:07
