@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN || "http://localhost:3000",
+    origin: process.env.CORS_ORIGIN || true,
     credentials: true,
   })
 );
@@ -28,6 +28,6 @@ app.use('/api/supermarkets', require('./routes/supermarkets'));
 app.use('/api/compare', require('./routes/compare'));
 
 // Start server
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server is running on port ${PORT}`);
 });
