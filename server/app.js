@@ -1,5 +1,5 @@
 // קובץ ראשי של האפליקציה. מגדיר Express, middlewares, routes.
-
+console.log("BOOT FILE:", __filename);
 const express = require('express');
 const cors = require('cors');
 const compareRoutes = require('./routes/compare');
